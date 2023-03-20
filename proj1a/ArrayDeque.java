@@ -45,7 +45,7 @@ public class ArrayDeque<T> {
 	}
 
 	private void decrease() {
-		resize(size / 2);
+		resize(items.length / 2);
 	}
 
 
