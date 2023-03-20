@@ -12,19 +12,23 @@ public class ArrayDeque<T> {
 		nextLast = 1;
 	}
 
-	public boolean isFull() {
+	private boolean isFull() {
 		return size == items.length;
 	}
 
-	public boolean isSparse() {
+	private boolean isSparse() {
 		return items.length >= 16 && size < (items.length / 4);
 	}
 
-	public int plusOne(int index) {
+	private int plusOne(int index) {
 		return (index + 1) % items.length;
 	}
 
-	public void resize(int capacity) {
+	private int minusOne(int index) {
+		return (index - 1 + items.length) % items.length;
+	}
+
+	private void resize(int capacity) {
 		T[] newDeque = (T[]) new Object[capacity];
 		int oldIndex = plusOne(nextFirst);
 		for (int i = 0; i < size; i++) {
@@ -36,16 +40,12 @@ public class ArrayDeque<T> {
 		nextLast = size;
 	}
 
-	public void increase() {
+	private void increase() {
 		resize(size * 2);
 	}
 
-	public void decrease() {
+	private void decrease() {
 		resize(size / 2);
-	}
-
-	public int minusOne(int index) {
-		return (index - 1 + items.length) % items.length;
 	}
 
 
@@ -64,7 +64,7 @@ public class ArrayDeque<T> {
 		}
 		items[nextLast] = item;
 		nextLast = plusOne(nextLast);
-		size -= 1;
+		size += 1;
 	}
 
 	public boolean isEmpty() {
@@ -108,7 +108,7 @@ public class ArrayDeque<T> {
 	}
 
 	public T get(int index) {
-		if (index > size) {
+		if (index >= size) {
 			return null;
 		}
 		int start = plusOne(nextFirst);
