@@ -82,12 +82,13 @@ public class ArrayDeque<T> {
 	}
 
 	public T removeFirst() {
-		nextFirst = plusOne(nextFirst);
-		T removedItem = items[nextFirst];
-		items[nextFirst] = null;
 		if (isSparse()) {
 			decrease();
 		}
+		nextFirst = plusOne(nextFirst);
+		T removedItem = items[nextFirst];
+		items[nextFirst] = null;
+
 		if (!isEmpty()) {
 			size -= 1;
 		}
@@ -95,12 +96,13 @@ public class ArrayDeque<T> {
 	}
 
 	public T removeLast() {
-		nextLast = minusOne(nextLast);
-		T removedItem = items[nextLast];
-		items[nextLast] = null;
 		if (isSparse()) {
 			decrease();
 		}
+		nextLast = minusOne(nextLast);
+		T removedItem = items[nextLast];
+		items[nextLast] = null;
+
 		if (!isEmpty()) {
 			size -= 1;
 		}
