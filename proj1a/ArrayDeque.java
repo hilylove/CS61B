@@ -76,7 +76,7 @@ public class ArrayDeque<T> {
 	}
 
 	public void printDeque() {
-		for (int i = plusOne(nextFirst); i != nextLast; i = plusOne(nextFirst)) {
+		for (int i = plusOne(nextFirst); i != nextLast; i = plusOne(i)) {
 			System.out.print(items[i] + " ");
 		}
 	}
