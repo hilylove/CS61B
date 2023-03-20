@@ -59,8 +59,8 @@ public class ArrayDeque<T> {
 	}
 
 	public void addLast(T item) {
-		if (isSparse()) {
-			decrease();
+		if (isFull()) {
+			increase();
 		}
 		items[nextLast] = item;
 		nextLast = plusOne(nextLast);
