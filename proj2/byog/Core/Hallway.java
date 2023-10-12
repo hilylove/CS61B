@@ -31,11 +31,8 @@ public class Hallway extends RectangleHelper {
     }
 
     private static Position randomStart(Random RANDOM, TETile[][] world) {
-        boolean needToContinue = true;
-        while (needToContinue) {
-            int i = RANDOM.nextInt(world.length - 1) + 1;
+        for (int i = 1; i < world.length - 1; i += 2) {
             if (!(world[i + 1][1].equals(Tileset.NOTHING) || world[i - 1][1].equals(Tileset.NOTHING))) {
-                needToContinue = false;
                 return new Position(i, 1);
             }
         }
@@ -50,8 +47,7 @@ public class Hallway extends RectangleHelper {
         Position[] around = aroundPositions(curPosition);
         Position[] connect = aroundPositions(curPosition, 2);
         for (int i = 0; i < 4; i++) {
-            if (!isOnEdge(around[i], world) && !world[around[i].x][around[i].y].equals(Tileset.FLOOR)
-                    && world[connect[i].x][connect[i].y].equals(Tileset.NOTHING)) {
+            if (!isOnEdge(around[i], world) && !world[around[i].x][around[i].y].equals(Tileset.FLOOR) && world[connect[i].x][connect[i].y].equals(Tileset.NOTHING)) {
                 availablePositions.add(connect[i]);
             }
         }
