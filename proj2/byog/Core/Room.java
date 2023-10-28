@@ -45,7 +45,8 @@ public class Room {
 
 
     public Position getCentralPos() {
-        return new Position((bottomLeft.getX() + upRight.getX()) / 2, (bottomLeft.getY() + upRight.getY()) / 2);
+        return new Position((bottomLeft.getX() + upRight.getX()) / 2,
+                (bottomLeft.getY() + upRight.getY()) / 2);
     }
 
     public int getWidth() {
@@ -89,16 +90,20 @@ public class Room {
         List<Connector> res = new ArrayList<>();
         for (int i = bottomLeft.getX(); i < upRight.getX(); i++) {
             Position p1 = new Position(i, bottomLeft.getY());
-            Connector.addConnectableDirection(res, world, Tileset.FLOOR, Direction.DOWN, p1, width, height);
+            Connector.addConnectableDirection(res, world, Tileset.FLOOR,
+                    Direction.DOWN, p1, width, height);
             Position p2 = new Position(i, upRight.getY());
-            Connector.addConnectableDirection(res, world, Tileset.FLOOR, Direction.UP, p2, width, height);
+            Connector.addConnectableDirection(res, world, Tileset.FLOOR,
+                    Direction.UP, p2, width, height);
         }
 
         for (int j = bottomLeft.getY(); j < upRight.getY(); j++) {
             Position p1 = new Position(bottomLeft.getX(), j);
-            Connector.addConnectableDirection(res, world, Tileset.FLOOR, Direction.LEFT, p1, width, height);
+            Connector.addConnectableDirection(res, world, Tileset.FLOOR,
+                    Direction.LEFT, p1, width, height);
             Position p2 = new Position(upRight.getX(), j);
-            Connector.addConnectableDirection(res, world, Tileset.FLOOR, Direction.RIGHT, p2, width, height);
+            Connector.addConnectableDirection(res, world, Tileset.FLOOR,
+                    Direction.RIGHT, p2, width, height);
         }
         return res;
     }
