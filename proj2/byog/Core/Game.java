@@ -4,6 +4,11 @@ import byog.TileEngine.TERenderer;
 import byog.TileEngine.TETile;
 import byog.TileEngine.Tileset;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -39,9 +44,20 @@ public class Game {
     public TETile[][] playWithInputString(String input) {
         // and return a 2D tile representation of the world that would have been
         // drawn if the same inputs had been given to playWithKeyboard().
+        long seed = 0;
         input = input.toLowerCase();
         TETile[][] finalWorldFrame = null;
-        finalWorldFrame = newGame(input);
+        char firstChar = input.charAt(0);
+        if (firstChar == 'n') {
+            seed = getSeed(input);
+            finalWorldFrame = generateWorld(seed);
+        }else if (firstChar == 'l'){
+            return loadGame();
+        }
+
+        if(input.substring(input.length()-2).equals(":q")){
+            saveGame(seed);
+        }
         return finalWorldFrame;
     }
 
@@ -50,16 +66,16 @@ public class Game {
      * public void playWithInputString(String input) {
      * TERenderer ter = new TERenderer();
      * ter.initialize(WIDTH, HEIGHT);
-     * <p>
      * input = input.toLowerCase();
      * TETile[][] finalWorldFrame = null;
      * finalWorldFrame = newGame(input);
-     * <p>
      * // draws the world to the screen
      * ter.renderFrame(finalWorldFrame);
      * }
      */
 
+
+    /**
     private TETile[][] newGame(String input) {
         TETile[][] finalWorldFrame;
         int indexS = input.indexOf('s');
@@ -68,10 +84,20 @@ public class Game {
 
         return finalWorldFrame;
     }
+     */
 
     private long convertSeed(String seedString) {
         return Long.valueOf(seedString.toString());
     }
+
+    private long getSeed(String input) {
+        StringBuilder seedNum = new StringBuilder();
+        for (int i = 1; input.charAt(i) != 's'; i++) {
+            seedNum.append(input.charAt(i));
+        }
+        return Long.valueOf(seedNum.toString());
+    }
+
 
     private TETile[][] generateWorld(long seed) {
         TETile[][] world = new TETile[WIDTH][HEIGHT];
@@ -101,6 +127,28 @@ public class Game {
             for (int y = 1; y < HEIGHT; y += 2) {
                 world[x][y] = Tileset.UNDEVFLOOR;
             }
+        }
+    }
+
+    private TETile[][] loadGame(){
+        TETile[][] finalWorldFrame = null;
+        try{
+            BufferedReader in = new BufferedReader(new FileReader("savefile.txt"));
+            long seed = Long.valueOf(in.readLine());
+            finalWorldFrame = generateWorld(seed);
+        }catch(IOException e){
+            e.printStackTrace();
+        }
+        return finalWorldFrame;
+    }
+
+    private void saveGame(long seed){
+        try{
+            BufferedWriter out = new BufferedWriter(new FileWriter("savefile.txt"));
+            out.write(String.valueOf(seed));
+            out.close();
+        }catch (IOException e){
+            e.printStackTrace();
         }
     }
 
