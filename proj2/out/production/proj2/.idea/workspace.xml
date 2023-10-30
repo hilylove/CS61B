@@ -7,15 +7,6 @@
     <list default="true" id="01110da9-8ceb-49d4-b36d-a99e63fdbe05" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/byog/Core/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/byog/Core/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/byog/Core/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/byog/Core/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/byog/Core/Position.java" beforeDir="false" afterPath="$PROJECT_DIR$/byog/Core/Position.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/byog/Core/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/byog/Core/Room.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/byog/TileEngine/Tileset.java" beforeDir="false" afterPath="$PROJECT_DIR$/byog/TileEngine/Tileset.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/proj2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/proj2/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/proj2/byog/Core/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/proj2/byog/Core/Game.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/proj2/byog/Core/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/proj2/byog/Core/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/proj2/byog/Core/Position.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/proj2/byog/Core/Position.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,22 +46,32 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/Ashley/OneDrive - stirlingmarathon.com/Desktop/Ashley/Java/CS61B/proj2",
-    "project.structure.last.edited": "Libraries",
+    "last_opened_file_path": "C:/Users/Ashley/OneDrive - stirlingmarathon.com/Desktop/Ashley/Java/proj2-2",
+    "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.sourceCode.Java"
+    "settings.editor.selected.configurable": "reference.projectsettings.compiler.javacompiler"
   }
 }]]></component>
   <component name="RunManager">
-    <configuration name="app" type="Application" factoryName="Application">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="byog.Core.Main" />
       <module name="proj2" />
-      <option name="PROGRAM_PARAMETERS" value="n123s" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="byog.Core.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -82,6 +83,17 @@
       <updated>1695783495210</updated>
     </task>
     <servers />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/byog/Core/Main.java</url>
+          <line>20</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

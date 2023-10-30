@@ -52,10 +52,7 @@ public class Position {
                 num++;
             }
         }
-        if (num == 3) {
-            return true;
-        }
-        return false;
+        return num == 3;
     }
 
     private List<Position> getAroundPositions(int width, int height, boolean isAll) {
@@ -177,4 +174,16 @@ public class Position {
             return Direction.DOWN;
         }
     }
+
+    public void drawInitialPerson(TETile[][] world, int width, int height) {
+        for (Position p : getAroundPositions(width, height, false)) {
+            if (p.isTile(world, Tileset.FLOOR)) {
+                p.drawTile(world, Tileset.PLAYER);
+                Player.setPos(p);
+                return;
+            }
+        }
+    }
 }
+
+

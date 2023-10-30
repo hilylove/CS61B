@@ -7,12 +7,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Room {
-    private Position bottomLeft;
-    private Position upRight;
+    private final Position bottomLeft;
+    private final Position upRight;
 
     private static int roomMaxNum = 20;
-    private static int roomMaxWidth = 8;
-    private static int roomMaxHeight = 6;
+    private static final int roomMaxWidth = 8;
+    private static final int roomMaxHeight = 6;
 
     public Room(Position bottomLeft, Position upRight) {
         this.bottomLeft = bottomLeft;
@@ -31,7 +31,7 @@ public class Room {
         return isXOver && isYOver;
     }
 
-    public boolean isOverLapped(List<Room> rooms) {
+    public boolean isOverlapped(List<Room> rooms) {
         if (rooms.isEmpty()) {
             return false;
         }
@@ -109,3 +109,5 @@ public class Room {
     }
 
 }
+
+
