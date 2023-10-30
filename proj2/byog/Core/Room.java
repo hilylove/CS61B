@@ -11,8 +11,8 @@ public class Room {
     private final Position upRight;
 
     private static int roomMaxNum = 20;
-    private static final int roomMaxWidth = 8;
-    private static final int roomMaxHeight = 6;
+    private static final int ROOM_MAX_WIDTH = 8;
+    private static final int ROOM_MAX_HEIGHT = 6;
 
     public Room(Position bottomLeft, Position upRight) {
         this.bottomLeft = bottomLeft;
@@ -71,9 +71,9 @@ public class Room {
         // not same y
         boolean isYLegal = r.bottomLeft.getY() != r.upRight.getY();
         // assure legal width
-        boolean isWidthLegal = r.getWidth() < Room.roomMaxWidth;
+        boolean isWidthLegal = r.getWidth() < Room.ROOM_MAX_WIDTH;
         // assure legal height
-        boolean isHeightLegal = r.getHeight() < Room.roomMaxHeight;
+        boolean isHeightLegal = r.getHeight() < Room.ROOM_MAX_HEIGHT;
 
         return isXLegal && isYLegal && isWidthLegal && isHeightLegal;
     }
