@@ -196,6 +196,7 @@ public class Game {
         try {
             ObjectInputStream in = new ObjectInputStream(new FileInputStream("savefile.txt"));
             finalWorldFrame = (TETile[][]) in.readObject();
+            Player.setPos((Position) in.readObject());
             in.close();
         } catch (IOException e) {
             e.printStackTrace();
