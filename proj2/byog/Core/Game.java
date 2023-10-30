@@ -61,7 +61,7 @@ public class Game {
     public TETile[][] playWithInputString(String input) {
         // and return a 2D tile representation of the world that would have been
         // drawn if the same inputs had been given to playWithKeyboard().
-        input = input.toLowerCase();
+        input = toLower(input);
         TETile[][] finalWorldFrame = null;
         char firstChar = input.charAt(0);
         if (firstChar == 'n') {
@@ -73,6 +73,19 @@ public class Game {
         }
 
         return finalWorldFrame;
+    }
+
+    private String toLower(String input) {
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < input.length(); i++) {
+            char ch = input.charAt(i);
+            if (Character.isUpperCase(ch)) {
+                sb.append(Character.toLowerCase(ch));
+            } else {
+                sb.append(ch);
+            }
+        }
+        return sb.toString();
     }
 
 
