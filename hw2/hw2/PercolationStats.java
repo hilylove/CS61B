@@ -43,8 +43,5 @@ public class PercolationStats {
     public double confidenceHigh() {
         return mean() + 1.96 * stddev() / Math.sqrt(T);
     }
-
-    public static void main(String[] args) {
-
-    }
+    
 }
