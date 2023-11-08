@@ -24,7 +24,7 @@ public class PercolationStats {
                 } while (percolation.isOpen(x, y));
                 percolation.open(x, y);
             }
-            openSiteFractions[i] = percolation.numberOfOpenSites() / (N * N);
+            openSiteFractions[i] = (double) percolation.numberOfOpenSites() / (N * N);
         }
     }
 
@@ -42,5 +42,9 @@ public class PercolationStats {
 
     public double confidenceHigh() {
         return mean() + 1.96 * stddev() / Math.sqrt(T);
+    }
+
+    public static void main(String[] args) {
+
     }
 }

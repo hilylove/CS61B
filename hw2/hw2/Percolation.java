@@ -1,3 +1,15 @@
+
+/******************************************************************************
+ *  Compilation:  javac InteractivePercolationVisualizer.java
+ *  Execution:    java InteractivePercolationVisualizer N
+ *  Dependencies: PercolationVisualizer.java Percolation.java
+ *
+ *  This program takes the grid size N as a command-line argument.
+ *  Then, the user repeatedly clicks sites to open with the mouse.
+ *  After each site is opened, it draws full sites in light blue,
+ *  open sites (that aren't full) in white, and blocked sites in black.
+ *
+ ******************************************************************************/
 package hw2;
 
 import edu.princeton.cs.algs4.WeightedQuickUnionUF;
@@ -100,5 +112,8 @@ public class Percolation {
         if (row < 0 || row >= N || col < 0 || col >= N) {
             throw new IndexOutOfBoundsException();
         }
+    }
+
+    public static void main(String[] args) {
     }
 }
